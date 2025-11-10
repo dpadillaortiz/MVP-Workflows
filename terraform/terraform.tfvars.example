@@ -1,1 +1,4 @@
 Show how to define variables
+auth0_domain        = "your-tenant-name.us.auth0.com"
+auth0_client_id     = "abcd1234"
+auth0_client_secret = "xyz7890"
