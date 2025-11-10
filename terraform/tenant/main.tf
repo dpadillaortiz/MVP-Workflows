@@ -28,3 +28,9 @@ provider "auth0" {
   client_id     = var.auth0_client_id
   client_secret = var.auth0_client_secret
 }
+
+resource "auth0_client" "my_client" {
+  name                                = "Application - Acceptance Test"
+  description                         = "Test Applications Long Description"
+  app_type                            = "non_interactive"
+}
