@@ -1,19 +1,3 @@
-variable "auth0_domain" {
-  description = "Auth0 tenant domain"
-  type        = string
-}
-
-variable "auth0_client_id" {
-  description = "Auth0 client ID"
-  type        = string
-}
-
-variable "auth0_client_secret" {
-  description = "Auth0 client secret"
-  type        = string
-  sensitive   = true
-}
-
 terraform {
   required_providers {
     auth0 = {
@@ -29,8 +13,8 @@ provider "auth0" {
   client_secret = var.auth0_client_secret
 }
 
-resource "auth0_client" "my_client" {
+resource "auth0_client" "grafana" {
   name                                = "Application - Acceptance Test"
   description                         = "Test Applications Long Description"
-  app_type                            = "non_interactive"
+  app_type                            = "non_interactive" #creates an M2M (“non-interactive”) app in Auth0.
 }
