@@ -13,8 +13,9 @@ provider "auth0" {
   client_secret = var.auth0_client_secret
 }
 
-resource "auth0_client" "grafana" {
-  name                                = "Application - Acceptance Test"
-  description                         = "Test Applications Long Description"
-  app_type                            = "non_interactive" #creates an M2M (“non-interactive”) app in Auth0.
+resource "auth0_guardian" "my_tf_guardian" {
+  policy        = "all-applications"
+  email         = true
+  otp           = true
+  recovery_code = true
 }
