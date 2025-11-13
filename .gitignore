@@ -3,4 +3,4 @@
 .terraform.lock.hcl
 terraform.tfstate*
 secrets.tfvars
-terraform/tenant/terraform.tfstate*
+terraform/tenant/terraform.tfstate.backup
