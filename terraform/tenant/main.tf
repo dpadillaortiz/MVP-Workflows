@@ -19,3 +19,17 @@ resource "auth0_guardian" "my_tf_guardian" {
   otp           = true
   recovery_code = true
 }
+
+resource "auth0_tenant" "my_tenant" {
+  friendly_name      = "Terraform Managed Tenant"
+  support_email      = "support@example.com"
+  support_url        = "https://example.com/support"
+  session_lifetime   = 700
+  
+  session_cookie {
+    mode = "non-persistent"
+  }
+  error_page {
+    html          = "<html> <h1> This is awesome </h1></html>"
+  }
+}
